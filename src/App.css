@@ -3,20 +3,20 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+  /* animation: App-logo-spin infinite 20s linear; */
+  /* height: 40vmin; */
+  /* pointer-events: none; */
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* background-color: #b1bdd6; */
+  /* min-height: 100vh; */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
   font-size: calc(10px + 2vmin);
-  color: white;
+  /* color: white; */
 }
 
 .App-link {
@@ -30,4 +30,55 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.ui.secondary.menu .active.item {
+  font-weight: 700;
+  text-decoration: line-through;
+  font-size: 17px;
+}
+
+.ui.secondary.menu .active.item {
+  background: none;
+}
+
+.ui.secondary.menu .item {
+  font-size: 17px;
+}
+
+.ui.basic.button,
+.ui.basic.buttons .button {
+  border-radius: 0px;
+}
+
+.menu-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.menu-nav li {
+  width: 20%;
+  border-bottom: 2px solid white;
+  padding-bottom: 15px;
+  list-style-type: none;
+}
+
+.menu-nav li:hover {
+  border-bottom: 2px solid black;
+  font-weight: 700;
+}
+
+.menu-nav a {
+  text-decoration: none;
+  color: black;
+}
+
+#list a {
+  text-decoration: none;
+  color: black;
+}
+
+.right a {
+  display: flex;
 }
