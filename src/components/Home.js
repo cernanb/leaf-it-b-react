@@ -5,6 +5,8 @@ import ReactRevealText from "react-reveal-text"
 import { Link as ScrollLink, Element } from "react-scroll"
 import leaf from "../images/banana-leaf.jpg"
 import styles from "react-responsive-carousel/lib/styles/carousel.min.css"
+import Gallery from "react-photo-gallery"
+import Lightbox from "react-images"
 
 import {
   Button,
@@ -27,6 +29,49 @@ import logo from "../images/LeafItBlogo2.jpg"
 import chilis from "../images/chilis.jpg"
 import flower from "../images/flower.jpg"
 import { LoremIpsum } from "lorem-ipsum"
+
+const photos = [
+  {
+    src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
+    width: 1,
+    height: 1
+  },
+  {
+    src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
+    width: 3,
+    height: 4
+  },
+  {
+    src: "https://source.unsplash.com/iecJiKe_RNg/600x799",
+    width: 3,
+    height: 4
+  },
+  {
+    src: "https://source.unsplash.com/epcsn8Ed8kY/600x799",
+    width: 3,
+    height: 4
+  },
+  {
+    src: "https://source.unsplash.com/NQSWvyVRIJk/800x599",
+    width: 4,
+    height: 3
+  },
+  {
+    src: "https://source.unsplash.com/zh7GEuORbUw/600x799",
+    width: 3,
+    height: 4
+  },
+  {
+    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    width: 4,
+    height: 3
+  },
+  {
+    src: "https://source.unsplash.com/I1ASdgphUH4/800x599",
+    width: 4,
+    height: 3
+  }
+]
 
 const lorem = new LoremIpsum({
   sentencesPerParagraph: {
@@ -53,24 +98,34 @@ const getWidth = () => {
  * such things.
  */
 const HomepageHeading = ({ mobile, show }) => (
-  <Container>
+  <Container style={{ marginTop: "60px" }}>
     <h1
       style={{
         fontSize: mobile ? "1.5em" : "3.1em",
         marginTop: mobile ? "0.5em" : "1.9em",
         fontWeight: "600",
+        margin: mobile ? "0 auto" : "",
+        marginBottom: mobile ? "30px" : "",
         width: "70%"
       }}
     >
-      <ReactRevealText show={show}>
-        Dedicated to providing a cultural experience for the guilt free
-        consumer, one leaf at a time.
-      </ReactRevealText>
+      {mobile && (
+        <>
+          Dedicated to providing a cultural experience for the guilt free
+          consumer, one leaf at a time.
+        </>
+      )}
+      {!mobile && (
+        <ReactRevealText show={show}>
+          Dedicated to providing a cultural experience for the guilt free
+          consumer, one leaf at a time.
+        </ReactRevealText>
+      )}
     </h1>
     <ScrollLink href="" to="about" spy={true} smooth={true} duration={2000}>
       <Button
         style={{ backgroundColor: "rgb(57,58,60)", color: "white" }}
-        size="huge"
+        size={mobile ? "small" : "huge"}
       >
         Learn More
       </Button>
@@ -87,11 +142,40 @@ HomepageHeading.propTypes = {
  * It can be more complicated, but you can create really flexible markup.
  */
 class DesktopContainer extends Component {
-  state = { activeItem: "home", show: false }
+  constructor() {
+    super()
+    this.state = { currentImage: 0, activeItem: "home", show: false }
+    this.closeLightbox = this.closeLightbox.bind(this)
+    this.openLightbox = this.openLightbox.bind(this)
+    this.gotoNext = this.gotoNext.bind(this)
+    this.gotoPrevious = this.gotoPrevious.bind(this)
+  }
 
   hideFixedMenu = () => this.setState({ fixed: false })
   showFixedMenu = () => this.setState({ fixed: true })
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  openLightbox(event, obj) {
+    this.setState({
+      currentImage: obj.index,
+      lightboxIsOpen: true
+    })
+  }
+  closeLightbox() {
+    this.setState({
+      currentImage: 0,
+      lightboxIsOpen: false
+    })
+  }
+  gotoPrevious() {
+    this.setState({
+      currentImage: this.state.currentImage - 1
+    })
+  }
+  gotoNext() {
+    this.setState({
+      currentImage: this.state.currentImage + 1
+    })
+  }
   componentDidMount() {
     setTimeout(() => {
       this.setState({ show: true })
@@ -108,7 +192,10 @@ class DesktopContainer extends Component {
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
         >
-          <Segment style={{ minHeight: 700, padding: "1em 0em" }} vertical>
+          <Segment
+            style={{ minHeight: 600, padding: "1em 0em", borderBottom: "none" }}
+            vertical
+          >
             <Container>
               <Menu secondary>
                 <img src={logo} height={"150"} width={"150"} alt="logo" />
@@ -164,15 +251,21 @@ class DesktopContainer extends Component {
           </Segment>
           <div />
         </Visibility>
-        <Container style={{ width: "80%" }}>
-          <Carousel autoPlay={true} transitionTime={2000}>
-            <div>
-              <img src={chilis} />
-            </div>
-            <div>
-              <img src={flower} />
-            </div>
-          </Carousel>
+        <Divider horizontal style={{ marginBottom: "50px" }}>
+          <Header as="h3" style={{ fontSize: "2em" }}>
+            Images
+          </Header>
+        </Divider>
+        <Container>
+          <Gallery photos={photos} onClick={this.openLightbox} />
+          <Lightbox
+            images={photos}
+            onClose={this.closeLightbox}
+            onClickPrev={this.gotoPrevious}
+            onClickNext={this.gotoNext}
+            currentImage={this.state.currentImage}
+            isOpen={this.state.lightboxIsOpen}
+          />
         </Container>
         <FoodMenu />
         {children}
@@ -222,27 +315,25 @@ class MobileContainer extends Component {
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
           <Segment
-            inverted
             textAlign="center"
             style={{ minHeight: 350, padding: "1em 0em" }}
             vertical
           >
             <Container>
-              <Menu inverted pointing secondary size="large">
+              <Menu pointing secondary size="large">
                 <Menu.Item onClick={this.handleToggle}>
                   <Icon name="sidebar" />
                 </Menu.Item>
-                <Menu.Item position="right">
-                  <Button as="a" inverted>
-                    Log in
-                  </Button>
-                  <Button as="a" inverted style={{ marginLeft: "0.5em" }}>
-                    Sign Up
-                  </Button>
-                </Menu.Item>
               </Menu>
+              <img src={logo} height={"150"} width={"150"} alt="logo" />
             </Container>
             <HomepageHeading mobile />
+            <Divider horizontal>
+              <Header as="h3" style={{ fontSize: "2em" }}>
+                Images
+              </Header>
+            </Divider>
+            <Gallery photos={photos.slice(0, 2)} />
           </Segment>
 
           {children}
@@ -269,8 +360,8 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
+    <Element name="about" />
     <Divider horizontal>
-      <Element name="about" />
       <Header as="h3" style={{ fontSize: "2em" }}>
         About Us
       </Header>

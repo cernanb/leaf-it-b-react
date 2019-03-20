@@ -11,7 +11,10 @@ import Beverages from "./Beverages"
 const Menu = () => (
   <>
     <Divider horizontal>
-      <Header as="h3" style={{ fontSize: "2em" }}>
+      <Header
+        as="h3"
+        style={{ fontSize: "2em", marginBottom: "50px", marginTop: "50px" }}
+      >
         Menu
       </Header>
       {/* <h1 style={{ marginBottom: "20px" }}>Menu</h1> */}

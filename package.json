@@ -6,6 +6,8 @@
     "lorem-ipsum": "^2.0.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-images": "^0.5.19",
+    "react-photo-gallery": "^6.3.2",
     "react-responsive-carousel": "^3.1.47",
     "react-reveal-text": "^0.1.1",
     "react-router-dom": "^5.0.0",
@@ -17,6 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "now-build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
