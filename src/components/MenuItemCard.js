@@ -12,7 +12,7 @@ const lorem = new LoremIpsum({
   }
 })
 
-const MenuItemCard = () => (
+const MenuItemCard = ({ title, description }) => (
   <div
     style={{
       width: "550px",
@@ -23,9 +23,9 @@ const MenuItemCard = () => (
   >
     <div style={{ marginLeft: "30px" }}>
       <div style={{ width: "50%", fontSize: "20px" }}>
-        <strong>{lorem.generateWords(4)}</strong>
+        <strong>{title}</strong>
       </div>
-      <div style={{ width: "50%" }}>{lorem.generateWords(5)}</div>
+      <div style={{ width: "50%" }}>{description}</div>
     </div>
   </div>
 )

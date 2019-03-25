@@ -82,3 +82,8 @@
 .right a {
   display: flex;
 }
+
+.food-menu {
+  padding: 15px;
+  background: "green";
+}

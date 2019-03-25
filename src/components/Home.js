@@ -28,46 +28,61 @@ import ContactForm from "./Form"
 import logo from "../images/LeafItBlogo2.jpg"
 import chilis from "../images/chilis.jpg"
 import flower from "../images/flower.jpg"
+import pork from "../images/pork.jpg"
+import leaves from "../images/leaves.jpg"
+import noodles from "../images/noodles.jpg"
+import skewer from "../images/skewer.jpg"
+import jerome from "../images/jerome.jpg"
+import skewer2 from "../images/skewer2.jpg"
+import skewer3 from "../images/skewer3.jpg"
+import skewer4 from "../images/skewer4.jpg"
+import hands from "../images/hands.jpg"
+import banner from "../images/banner.jpg"
 import { LoremIpsum } from "lorem-ipsum"
 
 const photos = [
   {
-    src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
-    width: 1,
-    height: 1
-  },
-  {
-    src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
-    width: 3,
-    height: 4
-  },
-  {
-    src: "https://source.unsplash.com/iecJiKe_RNg/600x799",
-    width: 3,
-    height: 4
-  },
-  {
-    src: "https://source.unsplash.com/epcsn8Ed8kY/600x799",
-    width: 3,
-    height: 4
-  },
-  {
-    src: "https://source.unsplash.com/NQSWvyVRIJk/800x599",
+    src: pork,
     width: 4,
     height: 3
   },
   {
-    src: "https://source.unsplash.com/zh7GEuORbUw/600x799",
+    src: leaves,
     width: 3,
     height: 4
   },
   {
-    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    src: skewer,
+    width: 3,
+    height: 4
+  },
+  {
+    src: jerome,
+    width: 3,
+    height: 4
+  },
+  {
+    src: noodles,
     width: 4,
     height: 3
   },
   {
-    src: "https://source.unsplash.com/I1ASdgphUH4/800x599",
+    src: skewer2,
+    width: 3,
+    height: 4
+  },
+  {
+    src: skewer3,
+    width: 3,
+    height: 4
+  },
+  {
+    src: hands,
+    width: 3,
+    height: 4
+  },
+  {
+    src: skewer4,
     width: 4,
     height: 3
   }
@@ -220,6 +235,19 @@ class DesktopContainer extends Component {
                   </ScrollLink>
                   <ScrollLink
                     href=""
+                    to="gallery"
+                    spy={true}
+                    smooth={true}
+                    duration={2000}
+                  >
+                    <Menu.Item
+                      name="gallery"
+                      active={activeItem === "gallery"}
+                      onClick={this.handleItemClick}
+                    />
+                  </ScrollLink>
+                  <ScrollLink
+                    href=""
                     to="menu"
                     spy={true}
                     smooth={true}
@@ -251,12 +279,10 @@ class DesktopContainer extends Component {
           </Segment>
           <div />
         </Visibility>
-        <Divider horizontal style={{ marginBottom: "50px" }}>
-          <Header as="h3" style={{ fontSize: "2em" }}>
-            Images
-          </Header>
-        </Divider>
+        <FoodMenu />
+        <Divider horizontal style={{ marginBottom: "50px" }} />
         <Container>
+          <Element name="gallery" />
           <Gallery photos={photos} onClick={this.openLightbox} />
           <Lightbox
             images={photos}
@@ -267,7 +293,7 @@ class DesktopContainer extends Component {
             isOpen={this.state.lightboxIsOpen}
           />
         </Container>
-        <FoodMenu />
+
         {children}
       </Responsive>
     )
@@ -370,14 +396,56 @@ const HomepageLayout = () => (
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
           <Grid.Column width={8}>
-            <p style={{ fontSize: "1.33em" }}>{lorem.generateParagraphs(1)}</p>
+            <p style={{ fontSize: "1.33em" }}>
+              Our menu is inspired by my childhood memories of waking up to the
+              aroma of fried garlic, onions, and tomatoes on a Saturday morning.
+              From the kitchen window, I remember watching my father use a large
+              machete to cut down long banana leaves in our backyard. After the
+              leaves were cleaned and trimmed, he used these leaves to encase a
+              serving of rice and meat. The essence of the banana leaf infused
+              the rice, and it was ready to eat. As my mother, father, sisters,
+              and I would sit around the table and unwrap our delicate packages,
+              I remember the excitement of our Saturday tradition, and felt
+              thankful for the opportunity to experience my culture at my
+              fingertips through a traditional technique.
+            </p>
 
-            <p style={{ fontSize: "1.33em" }}>{lorem.generateParagraphs(1)}</p>
-
-            <p style={{ fontSize: "1.33em" }}>{lorem.generateParagraphs(1)}</p>
+            <p style={{ fontSize: "1.33em" }}>
+              As I grew older, I understood that it wasn’t just about the yummy
+              food I enjoyed, but it was also about the method of serving, the
+              tradition of meals together, and the authenticity of my
+              upbringing, and culture that I cherished.
+            </p>
+            <p style={{ fontSize: "1.33em" }}>
+              This is what Leaf It B. is serving you. A traditionally prepared
+              mix of Islander/Asian fusion food, wrapped in a eco-friendly, and
+              fully compostable cone, for your modern enjoyment.
+            </p>
+            <p style={{ fontSize: "1.33em" }}>
+              We also focus on tradition, authenticity, and community, which is
+              why we use fully compostable materials to wrap, serve, and eat our
+              food with. Each banana leaf cone that encompasses the food comes
+              with a utensil made of birch wood. When done with your meal, these
+              items can simply be disposed of in the compost bin. Our waste
+              takes a mere 2-4 weeks to decompose in a commercial composting
+              plant. Which is seconds compared to the years it takes for a
+              plastic fork or spoon to decompose. Consumer responsibility, and
+              sustainability are in the forefront of Leaf It B’s vision. We
+              believe in the value of our world and the sustainability of our
+              community and our customers, in addition to enjoying cultural
+              diversity in our food. That’s why our mission is:
+              <br />
+              <br />
+              <p style={{ textAlign: "center" }}>
+                <strong>
+                  DEDICATED TO PROVIDING A CULTURAL EXPERIENCE FOR THE
+                  GUILT-FREE CONSUMER, ONE LEAF AT A TIME
+                </strong>
+              </p>
+            </p>
           </Grid.Column>
           <Grid.Column floated="right" width={6}>
-            <Image bordered rounded size="large" src={leaf} />
+            <Image bordered rounded size="large" src={banner} />
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -386,7 +454,7 @@ const HomepageLayout = () => (
       <Container>
         <Grid divided inverted stackable>
           <Grid.Row>
-            <Grid.Column width={8}>
+            <Grid.Column width={4}>
               <Header inverted as="h4" content="Social" />
               <List link inverted>
                 <List.Item
@@ -400,16 +468,13 @@ const HomepageLayout = () => (
                 <List.Item as="a">Twitter</List.Item>
               </List>
             </Grid.Column>
-            {/* <Grid.Column width={3}>
-              <Header inverted as="h4" content="Services" />
-              <List link inverted>
-                <List.Item as="a">Banana Pre-Order</List.Item>
-                <List.Item as="a">DNA FAQ</List.Item>
-                <List.Item as="a">How To Access</List.Item>
-                <List.Item as="a">Favorite X-Men</List.Item>
-              </List>
-            </Grid.Column> */}
-            <Grid.Column width={8}>
+            <Grid.Column width={6}>
+              <p>Fully licensed Catering and Events company.</p>
+              <p>Certified for private and public events.</p>
+              <p>Party trays available to order. </p>
+              <p>Please call for individual rates/special events.</p>
+            </Grid.Column>
+            <Grid.Column width={6}>
               <Header as="h4" inverted>
                 Contact Us
               </Header>
