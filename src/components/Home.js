@@ -263,6 +263,21 @@ class DesktopContainer extends Component {
                   </ScrollLink>
                   <ScrollLink
                     href=""
+                    to="social"
+                    spy={true}
+                    smooth={true}
+                    duration={2000}
+                  >
+                    <Menu.Item
+                      name="social"
+                      active={activeItem === "social"}
+                      onClick={this.handleItemClick}
+                    >
+                      Social
+                    </Menu.Item>
+                  </ScrollLink>
+                  <ScrollLink
+                    href=""
                     to="contact"
                     spy={true}
                     smooth={true}
@@ -329,14 +344,66 @@ class MobileContainer extends Component {
           vertical
           visible={sidebarOpened}
         >
-          <Menu.Item as="a" active>
-            Home
-          </Menu.Item>
-          <Menu.Item as="a">Contact</Menu.Item>
-          <Menu.Item as="a">About</Menu.Item>
-          <Menu.Item as="a">Careers</Menu.Item>
-          <Menu.Item as="a">Log in</Menu.Item>
-          <Menu.Item as="a">Sign Up</Menu.Item>
+          <ScrollLink
+            href=""
+            to="menu"
+            spy={true}
+            smooth={true}
+            duration={2000}
+          >
+            <Menu.Item
+              name="menu"
+              onClick={() => this.setState({ sidebarOpened: false })}
+            />
+          </ScrollLink>
+          <ScrollLink
+            href=""
+            to="about"
+            spy={true}
+            smooth={true}
+            duration={2000}
+          >
+            <Menu.Item
+              name="about"
+              onClick={() => this.setState({ sidebarOpened: false })}
+            />
+          </ScrollLink>
+          <ScrollLink
+            href=""
+            to="gallery"
+            spy={true}
+            smooth={true}
+            duration={2000}
+          >
+            <Menu.Item
+              name="gallery"
+              onClick={() => this.setState({ sidebarOpened: false })}
+            />
+          </ScrollLink>
+          <ScrollLink
+            href=""
+            to="social"
+            spy={true}
+            smooth={true}
+            duration={2000}
+          >
+            <Menu.Item
+              name="social"
+              onClick={() => this.setState({ sidebarOpened: false })}
+            />
+          </ScrollLink>
+          <ScrollLink
+            href=""
+            to="contact"
+            spy={true}
+            smooth={true}
+            duration={2000}
+          >
+            <Menu.Item
+              name="contact"
+              onClick={() => this.setState({ sidebarOpened: false })}
+            />
+          </ScrollLink>
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
@@ -354,12 +421,9 @@ class MobileContainer extends Component {
               <img src={logo} height={"150"} width={"150"} alt="logo" />
             </Container>
             <HomepageHeading mobile />
-            <Divider horizontal>
-              <Header as="h3" style={{ fontSize: "2em" }}>
-                Images
-              </Header>
-            </Divider>
-            <Gallery photos={photos.slice(0, 2)} />
+            <FoodMenu />
+            <Element name="gallery" />
+            <Gallery photos={photos.slice(0, 5)} />
           </Segment>
 
           {children}
@@ -456,6 +520,7 @@ const HomepageLayout = () => (
           <Grid.Row>
             <Grid.Column width={4}>
               <Header inverted as="h4" content="Social" />
+              <Element name="social" />
               <List link inverted>
                 <List.Item
                   href="https://www.instagram.com/leaf.it.b/?hl=en"
