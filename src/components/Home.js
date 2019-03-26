@@ -472,7 +472,10 @@ const HomepageLayout = () => (
               <p>Fully licensed Catering and Events company.</p>
               <p>Certified for private and public events.</p>
               <p>Party trays available to order. </p>
-              <p>Please call for individual rates/special events.</p>
+              <p>
+                Please <a href="tel:1-619-494-1263">call</a> for individual
+                rates/special events.
+              </p>
             </Grid.Column>
             <Grid.Column width={6}>
               <Header as="h4" inverted>
