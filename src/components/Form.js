@@ -5,7 +5,7 @@ import { Element } from "react-scroll"
 class ContactForm extends Component {
   render() {
     return (
-      <Form action="https://formspree.io/cernanb@gmail.com" method="POST">
+      <Form action="https://formspree.io/leafitb18@gmail.com" method="POST">
         <Element name="contact" />
         <Form.Group widths="equal">
           <Form.Input fluid placeholder="Name" name="name" />
