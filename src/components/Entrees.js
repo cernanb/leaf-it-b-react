@@ -3,7 +3,7 @@ import MenuItemCard from "./MenuItemCard"
 
 const Entrees = () => (
   <div style={{ textAlign: "left" }}>
-    <p style={{ textAlign: "left", fontSize: "20px" }}>your main dish</p>
+    <p style={{ textAlign: "left", fontSize: "20px" }}>YOUR MAIN DISH</p>
     <p style={{ textAlign: "left", fontSize: "20px" }}>
       BANANA STEAMED WHITE RICE
     </p>

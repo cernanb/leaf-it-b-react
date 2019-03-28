@@ -4,7 +4,7 @@ import MenuItemCard from "./MenuItemCard"
 const Appetizers = () => (
   <div style={{ textAlign: "left" }}>
     <p style={{ textAlign: "left", fontSize: "20px" }}>
-      complement your entree
+      COMPLEMENT YOUR ENTREE
     </p>
     <div style={{ display: "flex", flexWrap: "wrap" }}>
       <MenuItemCard title={"SOFT BOILED EGG"} />

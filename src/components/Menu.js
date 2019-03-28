@@ -14,6 +14,10 @@ class Menu extends Component {
   state = {
     activeTab: "entrees"
   }
+
+  componentDidMount() {
+    this.setState({ activeTab: window.location.pathname.split("/")[1] })
+  }
   render() {
     return (
       <>
@@ -47,17 +51,17 @@ class Menu extends Component {
                       : {}
                   }
                 >
-                  <Link to="/entrees">ENTREES</Link>
+                  <Link to="/">ENTREES</Link>
                 </li>
                 <li
-                  onClick={() => this.setState({ activeTab: "starters" })}
+                  onClick={() => this.setState({ activeTab: "sides" })}
                   style={
-                    this.state.activeTab === "starters"
+                    this.state.activeTab === "sides"
                       ? { borderBottom: "2px solid black", fontWeight: "700" }
                       : {}
                   }
                 >
-                  <Link to="/">SIDES (1)</Link>
+                  <Link to="/sides">SIDES (1)</Link>
                 </li>
 
                 <li
@@ -81,9 +85,9 @@ class Menu extends Component {
                   <Link to="/trays">PARTY TRAY SIZES</Link>
                 </li>
               </ul>
-              <Route exact path="/" component={Sides} />
+              <Route path="/sides" component={Sides} />
               {/* <Route path="/soups-salads" component={SoupsSalads} /> */}
-              <Route path="/entrees" component={Entrees} />
+              <Route exact path="/" component={Entrees} />
               {/* <Route path="/desserts" component={Desserts} /> */}
               <Route path="/beverages" component={Beverages} />
               <Route path="/desserts" component={Desserts} />

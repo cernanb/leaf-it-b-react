@@ -3,7 +3,7 @@ import MenuItemCard from "./MenuItemCard"
 
 const PartyTrays = () => (
   <div style={{ textAlign: "left" }}>
-    <p style={{ textAlign: "left", fontSize: "20px" }}>let's party!</p>
+    <p style={{ textAlign: "left", fontSize: "20px" }}>LET'S PARTY!</p>
     <em>
       25.00 DELIVERY CHARGE FOR 25 MILES OR LESS, AND 50.00 FOR 25-50 MILES.
     </em>

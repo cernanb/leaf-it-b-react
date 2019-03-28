@@ -25,6 +25,7 @@ import {
 } from "semantic-ui-react"
 import FoodMenu from "./Menu"
 import ContactForm from "./Form"
+import Events from "./Events"
 import logo from "../images/LeafItBlogo2.jpg"
 import chilis from "../images/chilis.jpg"
 import flower from "../images/flower.jpg"
@@ -294,6 +295,7 @@ class DesktopContainer extends Component {
           </Segment>
           <div />
         </Visibility>
+        <Events />
         <FoodMenu />
         <Divider horizontal style={{ marginBottom: "50px" }} />
         <Container>
