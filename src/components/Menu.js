@@ -16,7 +16,12 @@ class Menu extends Component {
   }
 
   componentDidMount() {
-    this.setState({ activeTab: window.location.pathname.split("/")[1] })
+    console.log(window.location.pathname.split("/")[1])
+    this.setState({
+      activeTab: window.location.pathname.split("/")[1]
+        ? window.location.pathname.split("/")[1]
+        : "entrees"
+    })
   }
   render() {
     return (
@@ -24,7 +29,12 @@ class Menu extends Component {
         <Divider horizontal>
           <Header
             as="h3"
-            style={{ fontSize: "2em", marginBottom: "50px", marginTop: "40px" }}
+            style={{
+              fontSize: "2em",
+              marginBottom: "50px",
+              marginTop: "40px",
+              activeTab: "entrees"
+            }}
           >
             Menu Offerings Served
           </Header>

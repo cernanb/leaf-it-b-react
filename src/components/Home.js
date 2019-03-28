@@ -223,6 +223,19 @@ class DesktopContainer extends Component {
                   />
                   <ScrollLink
                     href=""
+                    to="events"
+                    spy={true}
+                    smooth={true}
+                    duration={2000}
+                  >
+                    <Menu.Item
+                      name="events"
+                      active={activeItem === "events"}
+                      onClick={this.handleItemClick}
+                    />
+                  </ScrollLink>
+                  <ScrollLink
+                    href=""
                     to="about"
                     spy={true}
                     smooth={true}
@@ -423,6 +436,7 @@ class MobileContainer extends Component {
               <img src={logo} height={"150"} width={"150"} alt="logo" />
             </Container>
             <HomepageHeading mobile />
+            <Events />
             <FoodMenu />
             <Element name="gallery" />
             <Gallery photos={photos.slice(0, 5)} />
