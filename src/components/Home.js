@@ -361,6 +361,18 @@ class MobileContainer extends Component {
         >
           <ScrollLink
             href=""
+            to="events"
+            spy={true}
+            smooth={true}
+            duration={2000}
+          >
+            <Menu.Item
+              name="events"
+              onClick={() => this.setState({ sidebarOpened: false })}
+            />
+          </ScrollLink>
+          <ScrollLink
+            href=""
             to="menu"
             spy={true}
             smooth={true}
