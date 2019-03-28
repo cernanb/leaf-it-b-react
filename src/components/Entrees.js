@@ -11,25 +11,25 @@ const Entrees = () => (
       <MenuItemCard
         title={"ADOBOED RICE (+1)"}
         description={
-          "Our traditional garlic rice, with a soy sauce and vinegar based reduction.  Serviced with a whole soft boiled egg and garnished with sliced green onions."
+          "Our traditional garlic rice, with a soy sauce and vinegar based reduction.  Served with a whole soft boiled egg and garnished with sliced green onions."
         }
       />
       <MenuItemCard
         title={"BEEF STEW (11)"}
         description={
-          " A marriage of garlic, onions, and tomatoes stewed until they melt into the beef stew meat.  Carrots and potatoes included in the stew.  Accompanied by sweet, tri-colored baby bell peppers on a skewer.  Serviced with banana steamed rice."
+          " A marriage of garlic, onions, and tomatoes stewed until they melt into the beef stew meat.  Carrots and potatoes included in the stew.  Accompanied by sweet, tri-colored baby bell peppers on a skewer.  Served with banana steamed rice."
         }
       />
       <MenuItemCard
         title={"BBQ CHICKEN (10) or BBQ BEEF (11)"}
         description={
-          "Skinless/boneless chicken thighs or thinly sliced rib eye beef marinated in a mixture of a sweet, savory, and spicy sauce.  Garnished with red cabbage, green onion and sesame seeds.  Serviced with banana steamed rice."
+          "Skinless/boneless chicken thighs or thinly sliced rib eye beef marinated in a mixture of a sweet, savory, and spicy sauce.  Garnished with red cabbage, green onion and sesame seeds.  Served with banana steamed rice."
         }
       />
       <MenuItemCard
         title={"PERFECTION PORK (10)"}
         description={
-          "Baked, not fried pork butt covered in a sweet/salty sauce over white banana steeped rice.  Served with pickle cucumbers.  Serviced with banana steamed rice."
+          "Baked, not fried pork butt covered in a sweet/salty sauce over white banana steeped rice.  Served with pickle cucumbers.  Served with banana steamed rice."
         }
       />
 
