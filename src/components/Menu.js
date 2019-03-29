@@ -71,7 +71,7 @@ class Menu extends Component {
                       : {}
                   }
                 >
-                  <Link to="/sides">SIDES (1)</Link>
+                  <Link to="/sides">SIDES</Link>
                 </li>
 
                 <li
