@@ -14,7 +14,7 @@ const PartyTrays = () => (
       />
       <MenuItemCard
         title={"ADOBOED GARLIC RICE"}
-        description={"FULL-65/HALF-30"}
+        description={"FULL-70/HALF-40"}
       />
       <MenuItemCard title={"BEEF ENTRES"} description={"FULL-90/HALF- 45"} />
       <MenuItemCard
@@ -29,6 +29,7 @@ const PartyTrays = () => (
         title={"BABY BELL PEPPER AND ZUCCHINI SKEWERS"}
         description={"(SERVING OF 30)- 25"}
       />
+      <em>Custom Party trays ordered are customizable. Prices will vary.</em>
     </div>
   </div>
 )

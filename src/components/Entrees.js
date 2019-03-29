@@ -3,9 +3,11 @@ import MenuItemCard from "./MenuItemCard"
 
 const Entrees = () => (
   <div style={{ textAlign: "left" }}>
-    <p style={{ textAlign: "left", fontSize: "20px" }}>YOUR MAIN DISH</p>
     <p style={{ textAlign: "left", fontSize: "20px" }}>
-      BANANA STEAMED WHITE RICE
+      YOUR MAIN DISH SERVED IN A BANANA LEAF CONE
+    </p>
+    <p style={{ textAlign: "left", fontSize: "20px" }}>
+      <strong>BANANA STEAMED WHITE RICE</strong>
     </p>
     <div style={{ display: "flex", flexWrap: "wrap" }}>
       <MenuItemCard
