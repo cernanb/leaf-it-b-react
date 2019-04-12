@@ -3,6 +3,7 @@ import { Link, BrowserRouter as Router, Route } from "react-router-dom"
 import { Container, Divider, Header } from "semantic-ui-react"
 import { Element } from "react-scroll"
 import nights from "../images/dec-nights.png"
+import linda from "../images/linda.png"
 
 class Events extends Component {
   render() {
@@ -23,6 +24,7 @@ class Events extends Component {
             textAlign: "center"
           }}
         >
+          <img src={linda} height={300} />
           <img src={nights} height={300} />
         </Container>
       </>

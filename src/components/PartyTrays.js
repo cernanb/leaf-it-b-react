@@ -16,11 +16,8 @@ const PartyTrays = () => (
         title={"ADOBOED GARLIC RICE"}
         description={"FULL-70/HALF-40"}
       />
-      <MenuItemCard title={"BEEF ENTRES"} description={"FULL-90/HALF- 45"} />
-      <MenuItemCard
-        title={"CHICKEN OR PORK"}
-        description={"FULL- 85/HALF: 40"}
-      />
+      <MenuItemCard title={"BEEF ENTREES"} description={"FULL-90/HALF-45"} />
+      <MenuItemCard title={"CHICKEN OR PORK"} description={"FULL-85/HALF-40"} />
       <MenuItemCard
         title={"CUCUMBER/TOMATO SKEWERS"}
         description={"(SERVING OF 30)- 20"}

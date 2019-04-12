@@ -22,7 +22,7 @@ const MenuItemCard = ({ title, description }) => (
     }}
   >
     <div style={{ marginLeft: "30px" }}>
-      <div style={{ width: "50%", fontSize: "20px" }}>
+      <div style={{ width: "60%", fontSize: "20px" }}>
         <strong>{title}</strong>
       </div>
       <div style={{ width: "50%" }}>{description}</div>
