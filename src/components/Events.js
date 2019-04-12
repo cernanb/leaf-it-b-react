@@ -24,8 +24,12 @@ class Events extends Component {
             textAlign: "center"
           }}
         >
-          <img src={linda} height={300} />
-          <img src={nights} height={300} />
+          <div style={{ marginBottom: "20px" }}>
+            <img src={linda} height={300} />
+          </div>
+          <div>
+            <img src={nights} height={300} />
+          </div>
         </Container>
       </>
     )
