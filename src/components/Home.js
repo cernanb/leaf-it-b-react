@@ -214,7 +214,8 @@ class DesktopContainer extends Component {
           >
             <Container>
               <Menu secondary>
-                <img src={logo} height={"150"} width={"150"} alt="logo" />
+                <img src={logo} height={"350"} width={"350"} alt="logo" />
+                {/* <p>"Good food for good people"</p> */}
                 <Menu.Menu position="right">
                   <Menu.Item
                     name="home"
@@ -555,16 +556,14 @@ const HomepageLayout = () => (
                   as="a"
                   targel="_blank"
                 >
-                  Instagram
+                  Click to View Instagram
                 </List.Item>
-                <List.Item as="a">Facebook</List.Item>
-                <List.Item as="a">Twitter</List.Item>
+                <List.Item as="a">Click to View Facebook</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={6}>
-              <p>Fully licensed Catering and Events company.</p>
-              <p>Certified for private and public events.</p>
-              <p>Party trays available to order. </p>
+              <p>Fully licensed for private and public  catering events.</p>
+              <p>Registered for all Chula Vista Elementary School District or PTA events.</p>
               <p>
                 Please <a href="tel:1-619-494-1263">call</a> for individual
                 rates/special events.

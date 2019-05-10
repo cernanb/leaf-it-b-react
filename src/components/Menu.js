@@ -36,7 +36,7 @@ class Menu extends Component {
               activeTab: "entrees"
             }}
           >
-            Menu Offerings Served
+            Time to Order
           </Header>
         </Divider>
         <Container
@@ -44,11 +44,7 @@ class Menu extends Component {
             marginTop: "-20px"
           }}
         >
-          <em>
-            All choices of proteins can be mixed and matched with white, or
-            garlic rice. All dishes come with a side of egg, roasted veggies,
-            simple slaw, or pickled cucumbers. Prices may vary.
-          </em>
+          
           <Element name="menu" />
           <Router>
             <div style={{ textAlign: "center" }}>
@@ -61,7 +57,7 @@ class Menu extends Component {
                       : {}
                   }
                 >
-                  <Link to="/">ENTREES</Link>
+                  <Link to="/">WHAT WE SERVE</Link>
                 </li>
                 <li
                   onClick={() => this.setState({ activeTab: "sides" })}
@@ -71,19 +67,10 @@ class Menu extends Component {
                       : {}
                   }
                 >
-                  <Link to="/sides">SIDES</Link>
+                  <Link to="/sides">SAN DIEGO FESTIVALS/FARMERS MARKETS</Link>
                 </li>
 
-                <li
-                  onClick={() => this.setState({ activeTab: "desserts" })}
-                  style={
-                    this.state.activeTab === "desserts"
-                      ? { borderBottom: "2px solid black", fontWeight: "700" }
-                      : {}
-                  }
-                >
-                  <Link to="/desserts">DESSERTS</Link>
-                </li>
+               
                 <li
                   onClick={() => this.setState({ activeTab: "trays" })}
                   style={
@@ -92,7 +79,7 @@ class Menu extends Component {
                       : {}
                   }
                 >
-                  <Link to="/trays">PARTY TRAY SIZES</Link>
+                  <Link to="/trays">PARTY TRAYS</Link>
                 </li>
               </ul>
               <Route path="/sides" component={Sides} />
@@ -100,7 +87,7 @@ class Menu extends Component {
               <Route exact path="/" component={Entrees} />
               {/* <Route path="/desserts" component={Desserts} /> */}
               <Route path="/beverages" component={Beverages} />
-              <Route path="/desserts" component={Desserts} />
+            
               <Route path="/trays" component={PartyTrays} />
             </div>
           </Router>

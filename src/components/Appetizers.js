@@ -3,19 +3,22 @@ import MenuItemCard from "./MenuItemCard"
 
 const Appetizers = () => (
   <div style={{ textAlign: "left" }}>
-    <p style={{ textAlign: "left", fontSize: "20px" }}>
-      COMPLEMENT YOUR ENTREE
-    </p>
+    
     <div style={{ display: "flex", flexWrap: "wrap" }}>
-      <MenuItemCard title={"SOFT BOILED EGG (1)"} />
-      <MenuItemCard title={"SKEWERS OF CUCUMBER/TOMATO (1)"} />
-      <MenuItemCard
-        title={"SKEWER OF MULTI COLORED BABY BELL PEPPERS/ZUCCHINI (1)"}
-      />
-      <MenuItemCard
-        title={"EXTRA MEAT:  Beef or chicken (2)  Shrimp or Salmon (3)"}
-      />
+      <MenuItemCard title={"Mini Rice or Noodle Bowl (5.50)"} description={
+          "Enough for a child-sized portion or a snack"
+        }/>
+      <MenuItemCard title={"Banana Leaf Cone (starting at 10.50)"} description={
+          "Full-sized meal/double the amount of a mini bowl serving."
+        }/>
+     
     </div>
+    <p style={{ textAlign: "left", fontSize: "20px",  }}>
+      <strong>*Option to add meat or additional sides. </strong>
+    </p>
+    <p style={{ textAlign: "left", fontSize: "20px",  }}>
+      <strong>*Banana Leaf Cone patent pending. </strong>
+    </p>
   </div>
 )
 
