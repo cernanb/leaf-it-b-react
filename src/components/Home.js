@@ -496,6 +496,13 @@ const HomepageLayout = () => (
                 </List.Item>
                 <List.Item as="a">Click to View Facebook</List.Item>
               </List>
+              <Header inverted as="h4" content="Contact" />
+              <List link inverted>
+                <List.Item>
+                  Phone: <a href="tel:1-619-494-1263">(619) 494-1263</a>
+                </List.Item>
+                <List.Item as="a">Email: leafitb18@gmail.com</List.Item>
+              </List>
             </Grid.Column>
             <Grid.Column width={6}>
               <p>Fully licensed for private and public catering events.</p>
