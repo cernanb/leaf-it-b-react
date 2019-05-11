@@ -1,13 +1,11 @@
-import PropTypes from "prop-types"
-import React, { Component } from "react"
-import { Carousel } from "react-responsive-carousel"
-import ReactRevealText from "react-reveal-text"
-import { Link as ScrollLink, Element } from "react-scroll"
-import leaf from "../images/banana-leaf.jpg"
-import styles from "react-responsive-carousel/lib/styles/carousel.min.css"
-import Gallery from "react-photo-gallery"
-import Lightbox from "react-images"
-
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import ReactRevealText from 'react-reveal-text';
+import { Link as ScrollLink, Element } from 'react-scroll';
+import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Gallery from 'react-photo-gallery';
+import Lightbox from 'react-images';
 import {
   Button,
   Container,
@@ -21,108 +19,110 @@ import {
   Responsive,
   Segment,
   Sidebar,
-  Visibility
-} from "semantic-ui-react"
-import FoodMenu from "./Menu"
-import ContactForm from "./Form"
-import Events from "./Events"
-import logo from "../images/LeafItBlogo2.jpg"
-import chilis from "../images/chilis.jpg"
-import flower from "../images/flower.jpg"
-import pork from "../images/pork.jpg"
-import leaves from "../images/leaves.jpg"
-import noodles from "../images/noodles.jpg"
-import skewer from "../images/skewer.jpg"
-import jerome from "../images/jerome.jpg"
-import skewer2 from "../images/skewer2.jpg"
-import skewer3 from "../images/skewer3.jpg"
-import skewer4 from "../images/skewer4.jpg"
-import hands from "../images/hands.jpg"
-import banner from "../images/banner.jpg"
-import { LoremIpsum } from "lorem-ipsum"
+  Visibility,
+} from 'semantic-ui-react';
+import { LoremIpsum } from 'lorem-ipsum';
+import leaf from '../images/banana-leaf.jpg';
+
+import FoodMenu from './Menu';
+import ContactForm from './Form';
+import Events from './Events';
+import logo from '../images/LeafItBlogo2.jpg';
+import chilis from '../images/chilis.jpg';
+import flower from '../images/flower.jpg';
+import pork from '../images/pork.jpg';
+import leaves from '../images/leaves.jpg';
+import noodles from '../images/noodles.jpg';
+import skewer from '../images/skewer.jpg';
+import jerome from '../images/jerome.jpg';
+import skewer2 from '../images/skewer2.jpg';
+import skewer3 from '../images/skewer3.jpg';
+import skewer4 from '../images/skewer4.jpg';
+import hands from '../images/hands.jpg';
+import banner from '../images/banner.jpg';
 
 const photos = [
   {
     src: pork,
     width: 4,
-    height: 3
+    height: 3,
   },
   {
     src: leaves,
     width: 3,
-    height: 4
+    height: 4,
   },
   {
     src: skewer,
     width: 3,
-    height: 4
+    height: 4,
   },
   {
     src: jerome,
     width: 3,
-    height: 4
+    height: 4,
   },
   {
     src: noodles,
     width: 4,
-    height: 3
+    height: 3,
   },
   {
     src: skewer2,
     width: 3,
-    height: 4
+    height: 4,
   },
   {
     src: skewer3,
     width: 3,
-    height: 4
+    height: 4,
   },
   {
     src: hands,
     width: 3,
-    height: 4
+    height: 4,
   },
   {
     src: skewer4,
     width: 4,
-    height: 3
-  }
-]
+    height: 3,
+  },
+];
 
 const lorem = new LoremIpsum({
   sentencesPerParagraph: {
     max: 5,
-    min: 3
+    min: 3,
   },
   wordsPerSentence: {
     max: 16,
-    min: 4
-  }
-})
+    min: 4,
+  },
+});
 
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
 // For more advanced usage please check Responsive docs under the "Usage" section.
 const getWidth = () => {
-  const isSSR = typeof window === "undefined"
+  const isSSR = typeof window === 'undefined';
 
-  return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth
-}
+  return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth;
+};
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
  * such things.
  */
 const HomepageHeading = ({ mobile, show }) => (
-  <Container style={{ marginTop: "60px" }}>
+  <Container style={{ marginTop: '60px' }}>
     <h1
       style={{
-        fontSize: mobile ? "1.5em" : "3.1em",
-        marginTop: mobile ? "0.5em" : "1.9em",
-        fontWeight: "600",
-        margin: mobile ? "0 auto" : "",
-        marginBottom: mobile ? "30px" : "",
-        width: "70%"
+        fontSize: mobile ? '1.5em' : '3.1em',
+        marginTop: mobile ? '0.5em' : '1.9em',
+        fontWeight: '600',
+        margin: mobile ? '0 auto' : '',
+        marginBottom: mobile ? '30px' : '',
+        width: '70%',
       }}
     >
       {mobile && (
@@ -138,20 +138,20 @@ const HomepageHeading = ({ mobile, show }) => (
         </ReactRevealText>
       )}
     </h1>
-    <ScrollLink href="" to="about" spy={true} smooth={true} duration={2000}>
+    <ScrollLink href="" to="about" spy smooth duration={2000}>
       <Button
-        style={{ backgroundColor: "rgb(57,58,60)", color: "white" }}
-        size={mobile ? "small" : "huge"}
+        style={{ backgroundColor: 'rgb(57,58,60)', color: 'white' }}
+        size={mobile ? 'small' : 'huge'}
       >
         Learn More
       </Button>
     </ScrollLink>
   </Container>
-)
+);
 
 HomepageHeading.propTypes = {
-  mobile: PropTypes.bool
-}
+  mobile: PropTypes.bool,
+};
 
 /* Heads up!
  * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
@@ -159,47 +159,55 @@ HomepageHeading.propTypes = {
  */
 class DesktopContainer extends Component {
   constructor() {
-    super()
-    this.state = { currentImage: 0, activeItem: "home", show: false }
-    this.closeLightbox = this.closeLightbox.bind(this)
-    this.openLightbox = this.openLightbox.bind(this)
-    this.gotoNext = this.gotoNext.bind(this)
-    this.gotoPrevious = this.gotoPrevious.bind(this)
+    super();
+    this.state = { currentImage: 0, activeItem: 'home', show: false };
+    this.closeLightbox = this.closeLightbox.bind(this);
+    this.openLightbox = this.openLightbox.bind(this);
+    this.gotoNext = this.gotoNext.bind(this);
+    this.gotoPrevious = this.gotoPrevious.bind(this);
   }
 
-  hideFixedMenu = () => this.setState({ fixed: false })
-  showFixedMenu = () => this.setState({ fixed: true })
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  hideFixedMenu = () => this.setState({ fixed: false });
+
+  showFixedMenu = () => this.setState({ fixed: true });
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+
   openLightbox(event, obj) {
     this.setState({
       currentImage: obj.index,
-      lightboxIsOpen: true
-    })
+      lightboxIsOpen: true,
+    });
   }
+
   closeLightbox() {
     this.setState({
       currentImage: 0,
-      lightboxIsOpen: false
-    })
+      lightboxIsOpen: false,
+    });
   }
+
   gotoPrevious() {
     this.setState({
-      currentImage: this.state.currentImage - 1
-    })
+      currentImage: this.state.currentImage - 1,
+    });
   }
+
   gotoNext() {
     this.setState({
-      currentImage: this.state.currentImage + 1
-    })
+      currentImage: this.state.currentImage + 1,
+    });
   }
+
   componentDidMount() {
     setTimeout(() => {
-      this.setState({ show: true })
-    }, 1000)
+      this.setState({ show: true });
+    }, 1000);
   }
+
   render() {
-    const { children } = this.props
-    const { fixed, activeItem } = this.state
+    const { children } = this.props;
+    const { fixed, activeItem } = this.state;
 
     return (
       <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
@@ -209,95 +217,59 @@ class DesktopContainer extends Component {
           onBottomPassedReverse={this.hideFixedMenu}
         >
           <Segment
-            style={{ minHeight: 600, padding: "1em 0em", borderBottom: "none" }}
+            style={{ minHeight: 600, padding: '1em 0em', borderBottom: 'none' }}
             vertical
           >
             <Container>
               <Menu secondary>
-                <img src={logo} height={"350"} width={"350"} alt="logo" />
+                <img src={logo} height="350" width="350" alt="logo" />
                 {/* <p>"Good food for good people"</p> */}
                 <Menu.Menu position="right">
                   <Menu.Item
                     name="home"
-                    active={activeItem === "home"}
+                    active={activeItem === 'home'}
                     onClick={this.handleItemClick}
                   />
-                  <ScrollLink
-                    href=""
-                    to="events"
-                    spy={true}
-                    smooth={true}
-                    duration={2000}
-                  >
+                  <ScrollLink href="" to="events" spy smooth duration={2000}>
                     <Menu.Item
                       name="events"
-                      active={activeItem === "events"}
+                      active={activeItem === 'events'}
                       onClick={this.handleItemClick}
                     />
                   </ScrollLink>
-                  <ScrollLink
-                    href=""
-                    to="about"
-                    spy={true}
-                    smooth={true}
-                    duration={2000}
-                  >
+                  <ScrollLink href="" to="about" spy smooth duration={2000}>
                     <Menu.Item
                       name="about"
-                      active={activeItem === "about"}
+                      active={activeItem === 'about'}
                       onClick={this.handleItemClick}
                     />
                   </ScrollLink>
-                  <ScrollLink
-                    href=""
-                    to="gallery"
-                    spy={true}
-                    smooth={true}
-                    duration={2000}
-                  >
+                  <ScrollLink href="" to="gallery" spy smooth duration={2000}>
                     <Menu.Item
                       name="gallery"
-                      active={activeItem === "gallery"}
+                      active={activeItem === 'gallery'}
                       onClick={this.handleItemClick}
                     />
                   </ScrollLink>
-                  <ScrollLink
-                    href=""
-                    to="menu"
-                    spy={true}
-                    smooth={true}
-                    duration={2000}
-                  >
+                  <ScrollLink href="" to="menu" spy smooth duration={2000}>
                     <Menu.Item
                       name="menu"
-                      active={activeItem === "menu"}
+                      active={activeItem === 'menu'}
                       onClick={this.handleItemClick}
                     >
                       Menu
                     </Menu.Item>
                   </ScrollLink>
-                  <ScrollLink
-                    href=""
-                    to="social"
-                    spy={true}
-                    smooth={true}
-                    duration={2000}
-                  >
+                  <ScrollLink href="" to="social" spy smooth duration={2000}>
                     <Menu.Item
                       name="social"
-                      active={activeItem === "social"}
+                      active={activeItem === 'social'}
                       onClick={this.handleItemClick}
                     >
                       Social
                     </Menu.Item>
                   </ScrollLink>
-                  <ScrollLink
-                    href=""
-                    to="contact"
-                    spy={true}
-                    smooth={true}
-                    duration={2000}
-                  >
+                  <ScrollLink href="" to="contact" spy smooth duration={2000}>
                     <Menu.Item>
                       <Button basic>Contact Us</Button>
                     </Menu.Item>
@@ -311,7 +283,7 @@ class DesktopContainer extends Component {
         </Visibility>
         <Events />
         <FoodMenu />
-        <Divider horizontal style={{ marginBottom: "50px" }} />
+        <Divider horizontal style={{ marginBottom: '50px' }} />
         <Container>
           <Element name="gallery" />
           <Gallery photos={photos} onClick={this.openLightbox} />
@@ -327,24 +299,24 @@ class DesktopContainer extends Component {
 
         {children}
       </Responsive>
-    )
+    );
   }
 }
 
 DesktopContainer.propTypes = {
-  children: PropTypes.node
-}
+  children: PropTypes.node,
+};
 
 class MobileContainer extends Component {
-  state = {}
+  state = {};
 
-  handleSidebarHide = () => this.setState({ sidebarOpened: false })
+  handleSidebarHide = () => this.setState({ sidebarOpened: false });
 
-  handleToggle = () => this.setState({ sidebarOpened: true })
+  handleToggle = () => this.setState({ sidebarOpened: true });
 
   render() {
-    const { children } = this.props
-    const { sidebarOpened } = this.state
+    const { children } = this.props;
+    const { sidebarOpened } = this.state;
 
     return (
       <Responsive
@@ -360,73 +332,37 @@ class MobileContainer extends Component {
           vertical
           visible={sidebarOpened}
         >
-          <ScrollLink
-            href=""
-            to="events"
-            spy={true}
-            smooth={true}
-            duration={2000}
-          >
+          <ScrollLink href="" to="events" spy smooth duration={2000}>
             <Menu.Item
               name="events"
               onClick={() => this.setState({ sidebarOpened: false })}
             />
           </ScrollLink>
-          <ScrollLink
-            href=""
-            to="menu"
-            spy={true}
-            smooth={true}
-            duration={2000}
-          >
+          <ScrollLink href="" to="menu" spy smooth duration={2000}>
             <Menu.Item
               name="menu"
               onClick={() => this.setState({ sidebarOpened: false })}
             />
           </ScrollLink>
-          <ScrollLink
-            href=""
-            to="about"
-            spy={true}
-            smooth={true}
-            duration={2000}
-          >
+          <ScrollLink href="" to="about" spy smooth duration={2000}>
             <Menu.Item
               name="about"
               onClick={() => this.setState({ sidebarOpened: false })}
             />
           </ScrollLink>
-          <ScrollLink
-            href=""
-            to="gallery"
-            spy={true}
-            smooth={true}
-            duration={2000}
-          >
+          <ScrollLink href="" to="gallery" spy smooth duration={2000}>
             <Menu.Item
               name="gallery"
               onClick={() => this.setState({ sidebarOpened: false })}
             />
           </ScrollLink>
-          <ScrollLink
-            href=""
-            to="social"
-            spy={true}
-            smooth={true}
-            duration={2000}
-          >
+          <ScrollLink href="" to="social" spy smooth duration={2000}>
             <Menu.Item
               name="social"
               onClick={() => this.setState({ sidebarOpened: false })}
             />
           </ScrollLink>
-          <ScrollLink
-            href=""
-            to="contact"
-            spy={true}
-            smooth={true}
-            duration={2000}
-          >
+          <ScrollLink href="" to="contact" spy smooth duration={2000}>
             <Menu.Item
               name="contact"
               onClick={() => this.setState({ sidebarOpened: false })}
@@ -437,7 +373,7 @@ class MobileContainer extends Component {
         <Sidebar.Pusher dimmed={sidebarOpened}>
           <Segment
             textAlign="center"
-            style={{ minHeight: 350, padding: "1em 0em" }}
+            style={{ minHeight: 350, padding: '1em 0em' }}
             vertical
           >
             <Container>
@@ -446,7 +382,7 @@ class MobileContainer extends Component {
                   <Icon name="sidebar" />
                 </Menu.Item>
               </Menu>
-              <img src={logo} height={"150"} width={"150"} alt="logo" />
+              <img src={logo} height="150" width="150" alt="logo" />
             </Container>
             <HomepageHeading mobile />
             <Events />
@@ -458,30 +394,30 @@ class MobileContainer extends Component {
           {children}
         </Sidebar.Pusher>
       </Responsive>
-    )
+    );
   }
 }
 
 MobileContainer.propTypes = {
-  children: PropTypes.node
-}
+  children: PropTypes.node,
+};
 
 const ResponsiveContainer = ({ children }) => (
   <div>
     <DesktopContainer>{children}</DesktopContainer>
     <MobileContainer>{children}</MobileContainer>
   </div>
-)
+);
 
 ResponsiveContainer.propTypes = {
-  children: PropTypes.node
-}
+  children: PropTypes.node,
+};
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
     <Element name="about" />
     <Divider horizontal>
-      <Header as="h3" style={{ fontSize: "2em" }}>
+      <Header as="h3" style={{ fontSize: '2em' }}>
         About Us
       </Header>
     </Divider>
@@ -489,7 +425,7 @@ const HomepageLayout = () => (
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
           <Grid.Column width={8}>
-            <p style={{ fontSize: "1.33em" }}>
+            <p style={{ fontSize: '1.33em' }}>
               Our menu is inspired by my childhood memories of waking up to the
               aroma of fried garlic, onions, and tomatoes on a Saturday morning.
               From the kitchen window, I remember watching my father use a large
@@ -503,18 +439,18 @@ const HomepageLayout = () => (
               fingertips through a traditional technique.
             </p>
 
-            <p style={{ fontSize: "1.33em" }}>
+            <p style={{ fontSize: '1.33em' }}>
               As I grew older, I understood that it wasn’t just about the yummy
               food I enjoyed, but it was also about the method of serving, the
               tradition of meals together, and the authenticity of my
               upbringing, and culture that I cherished.
             </p>
-            <p style={{ fontSize: "1.33em" }}>
+            <p style={{ fontSize: '1.33em' }}>
               This is what Leaf It B. is serving you. A traditionally prepared
               mix of Islander/Asian fusion food, wrapped in a eco-friendly, and
               fully compostable cone, for your modern enjoyment.
             </p>
-            <p style={{ fontSize: "1.33em" }}>
+            <p style={{ fontSize: '1.33em' }}>
               We also focus on tradition, authenticity, and community, which is
               why we use fully compostable materials to wrap, serve, and eat our
               food with. Each banana leaf cone that encompasses the food comes
@@ -529,7 +465,7 @@ const HomepageLayout = () => (
               diversity in our food. That’s why our mission is:
               <br />
               <br />
-              <p style={{ textAlign: "center" }}>
+              <p style={{ textAlign: 'center' }}>
                 <strong>
                   DEDICATED TO PROVIDING A CULTURAL EXPERIENCE FOR THE
                   GUILT-FREE CONSUMER, ONE LEAF AT A TIME
@@ -543,7 +479,7 @@ const HomepageLayout = () => (
         </Grid.Row>
       </Grid>
     </Segment>
-    <Segment inverted vertical style={{ padding: "5em 0em" }}>
+    <Segment inverted vertical style={{ padding: '5em 0em' }}>
       <Container>
         <Grid divided inverted stackable>
           <Grid.Row>
@@ -562,8 +498,11 @@ const HomepageLayout = () => (
               </List>
             </Grid.Column>
             <Grid.Column width={6}>
-              <p>Fully licensed for private and public  catering events.</p>
-              <p>Registered for all Chula Vista Elementary School District or PTA events.</p>
+              <p>Fully licensed for private and public catering events.</p>
+              <p>
+                Registered for all Chula Vista Elementary School District or PTA
+                events.
+              </p>
               <p>
                 Please <a href="tel:1-619-494-1263">call</a> for individual
                 rates/special events.
@@ -581,13 +520,13 @@ const HomepageLayout = () => (
     </Segment>
     <p
       style={{
-        color: "white",
-        textAlign: "center",
-        backgroundColor: "#1b1c1d"
+        color: 'white',
+        textAlign: 'center',
+        backgroundColor: '#1b1c1d',
       }}
     >
       Leaf It B., ALL RIGHTS RESERVED
     </p>
   </ResponsiveContainer>
-)
-export default HomepageLayout
+);
+export default HomepageLayout;
