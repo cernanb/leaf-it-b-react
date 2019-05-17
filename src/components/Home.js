@@ -167,9 +167,15 @@ class DesktopContainer extends Component {
     this.gotoPrevious = this.gotoPrevious.bind(this);
   }
 
-  hideFixedMenu = () => this.setState({ fixed: false });
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ show: true });
+    }, 1000);
+  }
 
   showFixedMenu = () => this.setState({ fixed: true });
+
+  hideFixedMenu = () => this.setState({ fixed: false });
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
@@ -197,12 +203,6 @@ class DesktopContainer extends Component {
     this.setState({
       currentImage: this.state.currentImage + 1,
     });
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ show: true });
-    }, 1000);
   }
 
   render() {
@@ -494,7 +494,12 @@ const HomepageLayout = () => (
                 >
                   Click to View Instagram
                 </List.Item>
-                <List.Item as="a">Click to View Facebook</List.Item>
+                <List.Item
+                  href="https://www.facebook.com/Leaf-It-B-2247113175505381/"
+                  as="a"
+                >
+                  Click to View Facebook
+                </List.Item>
               </List>
               <Header inverted as="h4" content="Contact" />
               <List link inverted>
