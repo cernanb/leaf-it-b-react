@@ -1,6 +1,5 @@
 import React from 'react';
 import { LoremIpsum } from 'lorem-ipsum';
-import adobo from '../images/adoborice.JPG';
 
 const lorem = new LoremIpsum({
   sentencesPerParagraph: {
@@ -13,7 +12,7 @@ const lorem = new LoremIpsum({
   },
 });
 
-const MenuItemCard = ({ title, description }) => (
+const MenuItemCard = ({ title, description, img }) => (
   <div
     style={{
       width: '550px',
@@ -23,14 +22,14 @@ const MenuItemCard = ({ title, description }) => (
     }}
   >
     <div style={{ marginLeft: '30px', width: '50%' }}>
-      <div style={{ width: '60%', fontSize: '20px' }}>
+      <div style={{ width: '50%', fontSize: '20px' }}>
         <strong>{title}</strong>
       </div>
       <div style={{ width: '50%' }}>{description}</div>
     </div>
-    {/* <div style={{ width: '50%' }}>
-      <img src={adobo} height={300} />
-    </div> */}
+    <div style={{ width: '50%' }}>
+      <img src={img} width={225} height={300} />
+    </div>
   </div>
 );
 
