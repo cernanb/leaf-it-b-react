@@ -20,7 +20,7 @@ const Entrees = () => (
         img={adobo}
       />
       <MenuItemCard
-        title="BEEF STEW "
+        title="BEEF TRIFECTA "
         description=" A marriage of garlic, onions, and tomatoes stewed until they melt into the beef stew meat.  Carrots and potatoes included in the stew.  Accompanied by sweet, tri-colored baby bell peppers on a skewer.  Served with banana steamed rice."
         img={coming}
       />

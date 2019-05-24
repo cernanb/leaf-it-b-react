@@ -40,6 +40,10 @@ import skewer3 from '../images/skewer3.jpg';
 import skewer4 from '../images/skewer4.jpg';
 import hands from '../images/hands.jpg';
 import banner from '../images/banner.jpg';
+import good from '../images/good.jpg';
+import group from '../images/group.jpg';
+import savage from '../images/savage.jpg';
+import market from '../images/market.jpg';
 
 const photos = [
   {
@@ -53,7 +57,7 @@ const photos = [
     height: 4,
   },
   {
-    src: skewer,
+    src: good,
     width: 3,
     height: 4,
   },
@@ -63,17 +67,17 @@ const photos = [
     height: 4,
   },
   {
-    src: noodles,
+    src: group,
     width: 4,
     height: 3,
   },
   {
-    src: skewer2,
+    src: savage,
     width: 3,
     height: 4,
   },
   {
-    src: skewer3,
+    src: market,
     width: 3,
     height: 4,
   },
@@ -81,11 +85,6 @@ const photos = [
     src: hands,
     width: 3,
     height: 4,
-  },
-  {
-    src: skewer4,
-    width: 4,
-    height: 3,
   },
 ];
 
