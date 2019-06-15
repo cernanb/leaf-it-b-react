@@ -2,6 +2,11 @@ import React from 'react';
 import MenuItemCard from './MenuItemCard';
 import cucumbers from '../images/cucumber.JPG';
 import coming from '../images/coming.jpg';
+import trifecta from '../images/beef-trifecta.jpg';
+import cucSkewers from '../images/cuc-skewers.jpg';
+import garlicNoodles from '../images/garlic-noodles.jpg';
+import trueRice from '../images/true-rice.jpg';
+import islandChicken from '../images/island-chicken.jpg';
 
 const PartyTrays = () => (
   <div style={{ textAlign: 'left' }}>
@@ -21,7 +26,7 @@ const PartyTrays = () => (
       <MenuItemCard
         title="BANANA STEEPED WHITE RICE"
         description={`Half-15 | 2"-45`}
-        img={coming}
+        img={trueRice}
       />
       <MenuItemCard
         title="ADOBOED CHICKEN FRIED RICE"
@@ -31,25 +36,25 @@ const PartyTrays = () => (
       <MenuItemCard
         title="BEEF ENTREES"
         description={`Half-45 | 2"-110`}
-        img={coming}
+        img={trifecta}
       />
 
       <MenuItemCard
         title="CHICKEN OR PORK ENTREES"
         description={`Half-35 | 2"-90`}
-        img={coming}
+        img={islandChicken}
       />
 
       <MenuItemCard
         title="GARLIC NOODLES (VEGETABLE OPTION)"
         description={`Half-25 | 2"-50`}
-        img={coming}
+        img={garlicNoodles}
       />
 
       <MenuItemCard
         title="SWEET & SOUR CUCUMBER SKEWERS"
         description="Half-20"
-        img={cucumbers}
+        img={cucSkewers}
       />
 
       <MenuItemCard
