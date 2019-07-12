@@ -25,41 +25,41 @@ const PartyTrays = () => (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       <MenuItemCard
         title="BANANA STEEPED WHITE RICE"
-        description={`Half-15 | 2"-45`}
+        description={`Half-20 | 2"-45`}
         img={trueRice}
       />
       <MenuItemCard
         title="ADOBOED CHICKEN FRIED RICE"
-        description={`Half-30 | 2"-55| 4"-75`}
+        description={`Half-35 | 2"-55| 4"-75`}
         img={coming}
       />
       <MenuItemCard
         title="BEEF ENTREES"
-        description={`Half-45 | 2"-110`}
+        description={`Half-50 | 2"-110`}
         img={trifecta}
       />
 
       <MenuItemCard
         title="CHICKEN OR PORK ENTREES"
-        description={`Half-35 | 2"-90`}
+        description={`Half-40 | 2"-90`}
         img={islandChicken}
       />
 
       <MenuItemCard
         title="GARLIC NOODLES (VEGETABLE OPTION)"
-        description={`Half-25 | 2"-50`}
+        description={`Half-30 | 2"-50`}
         img={garlicNoodles}
       />
 
       <MenuItemCard
         title="SWEET & SOUR CUCUMBER SKEWERS"
-        description="Half-20"
+        description="Half-25"
         img={cucSkewers}
       />
 
       <MenuItemCard
         title="BABY BELL PEPPER SKEWERS"
-        description="Half-20"
+        description="Half-25"
         img={coming}
       />
     </div>

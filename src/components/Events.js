@@ -8,6 +8,7 @@ import otay from '../images/otay.png';
 import pifa from '../images/pifa.jpg';
 import mabuhay from '../images/mabuhay.png';
 import night from '../images/night.png';
+import taste from '../images/taste.png';
 
 class Events extends Component {
   render() {
@@ -32,7 +33,7 @@ class Events extends Component {
             <img src={otay} height={300} />
           </div>
           <div>
-            <img src={mabuhay} height={300} />
+            <img src={taste} height={400} width={300} />
           </div>
           <div>
             <img src={night} height={300} />
@@ -59,6 +60,9 @@ class Events extends Component {
             textAlign: 'center',
           }}
         >
+          <div>
+            <img src={mabuhay} height={300} />
+          </div>
           <div style={{ marginBottom: '20px' }}>
             <img src={linda} height={300} />
           </div>
