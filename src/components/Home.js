@@ -26,8 +26,6 @@ import {
 import FoodMenu from "./Menu"
 import ContactForm from "./Form"
 import logo from "../images/LeafItBlogo2.jpg"
-import chilis from "../images/chilis.jpg"
-import flower from "../images/flower.jpg"
 import { LoremIpsum } from "lorem-ipsum"
 
 const photos = [
