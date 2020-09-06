@@ -21,9 +21,6 @@ import {
   Sidebar,
   Visibility
 } from 'semantic-ui-react'
-import FoodMenu from './Menu'
-import ContactForm from './Form'
-import logo from '../images/LeafItBlogo2.jpg'
 import { LoremIpsum } from 'lorem-ipsum'
 import leaf from '../images/banana-leaf.jpg'
 
