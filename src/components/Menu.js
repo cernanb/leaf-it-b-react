@@ -1,49 +1,98 @@
-import React from "react"
-import { Link, BrowserRouter as Router, Route } from "react-router-dom"
-import { Container, Divider, Header } from "semantic-ui-react"
-import { Element } from "react-scroll"
-import Appetizers from "./Appetizers"
+import React, { Component } from 'react';
+import { Link, BrowserRouter as Router, Route } from 'react-router-dom'
+import { Container, Divider, Header } from 'semantic-ui-react';
+import { Element } from 'react-scroll';
+import Sides from './Appetizers'
 // import SoupsSalads from "./SoupsSalads"
-import Entrees from "./Entrees"
+import Entrees from './Entrees'
 // import Desserts from "./Desserts"
-import Beverages from "./Beverages"
+import Beverages from './Beverages'
+import Desserts from './Desserts'
+import PartyTrays from './PartyTrays'
 
-const Menu = () => (
-  <>
-    <Divider horizontal>
-      <Header
-        as="h3"
-        style={{ fontSize: "2em", marginBottom: "50px", marginTop: "50px" }}
-      >
-        Menu
-      </Header>
-      {/* <h1 style={{ marginBottom: "20px" }}>Menu</h1> */}
-    </Divider>
-    <Container>
-      <Element name="menu" />
-      <Router>
-        <div style={{ textAlign: "center" }}>
-          <ul className="menu-nav">
-            <li>
-              <Link to="/">STARTERS</Link>
-            </li>
+class Menu extends Component {
+  state = {
+    activeTab: 'entrees',
+  };
 
-            <li>
-              <Link to="/entrees">ENTREES</Link>
-            </li>
+  componentDidMount() {
+    console.log(window.location.pathname.split('/')[1])
+    this.setState({
+      activeTab: window.location.pathname.split('/')[1]
+        ? window.location.pathname.split('/')[1] 
+        : 'entrees',
+    });
+  }
 
-            <li>
-              <Link to="/beverages">BEVERAGES</Link>
-            </li>
-          </ul>
-          <Route exact path="/" component={Appetizers} />
-          {/* <Route path="/soups-salads" component={SoupsSalads} /> */}
-          <Route path="/entrees" component={Entrees} />
-          {/* <Route path="/desserts" component={Desserts} /> */}
-          <Route path="/beverages" component={Beverages} />
-        </div>
-      </Router>
-    </Container>
-  </>
-)
-export default Menu
+  render() {
+    return (
+      <>
+        <Divider horizontal>
+          <Header
+            as="h3"
+            style={{
+              fontSize: '2em',
+              marginBottom: '50px',
+              marginTop: '40px',
+              activeTab: 'entrees',
+            }}
+          >
+            Time to Order
+          </Header>
+        </Divider>
+        <Container
+          style={{
+            marginTop: '-20px',
+          }}
+        >
+          <Element name="menu" />
+          <Router>
+            <div style={{ textAlign: 'center' }}>
+              <ul className="menu-nav">
+                <li
+                  onClick={() => this.setState({ activeTab: 'entrees' })}
+                  style={
+                    this.state.activeTab === 'entrees'
+                      ? { borderBottom: '2px solid black', fontWeight: '700' }
+                      : {}
+                  }
+                >
+                  <Link to="/">WHAT WE SERVE</Link>
+                </li>
+                <li
+                  onClick={() => this.setState({ activeTab: 'sides' })}
+                  style={
+                    this.state.activeTab === 'sides'
+                      ? { borderBottom: '2px solid black', fontWeight: '700' }
+                      : {}
+                  }
+                >
+                  <Link to="/sides">SAN DIEGO FESTIVALS/FARMERS MARKETS</Link>
+                </li>
+
+                <li
+                  onClick={() => this.setState({ activeTab: 'trays' })}
+                  style={
+                    this.state.activeTab === 'trays'
+                      ? { borderBottom: '2px solid black', fontWeight: '700' }
+                      : {}
+                  }
+                >
+                  <Link to="/trays">PARTY TRAYS</Link>
+                </li>
+              </ul>
+              <Route path="/sides" component={Sides} />
+              {/* <Route path="/soups-salads" component={SoupsSalads} /> */}
+              <Route exact path="/" component={Entrees} />
+              {/* <Route path="/desserts" component={Desserts} /> */}
+              <Route path="/beverages" component={Beverages} />
+
+              <Route path="/trays" component={PartyTrays} />
+            </div>
+          </Router>
+        </Container>
+      </>
+    );
+  }
+}
+export default Menu;

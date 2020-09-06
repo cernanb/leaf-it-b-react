@@ -92,3 +92,11 @@ p {
 }
 
 /*# sourceMappingURL=bd-coming-soon.css.map */
+.right a {
+  display: flex;
+}
+
+.food-menu {
+  padding: 15px;
+  background: 'green';
+}
